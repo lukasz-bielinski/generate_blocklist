@@ -16,6 +16,6 @@ docker run -d \
 
 docker run -d \
    --name nginx \
-   --net=host \
-   -v $(pwd)/webserver-files:/usr/share/nginx/html:ro \
+   -p 7777:80 \
+   -v $(pwd)/webserver-files:/usr/share/nginx/html \
     $IMAGE_WEBSERVER
