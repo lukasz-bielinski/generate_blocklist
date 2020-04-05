@@ -1,7 +1,7 @@
 #!/bin/bash
 bash stop.sh
 
-make build
+make build-nc
 make publish-latest
 
 IMAGE="lukaszbielinski/generate_blocklist"
