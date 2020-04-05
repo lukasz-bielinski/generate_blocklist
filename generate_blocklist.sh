@@ -11,7 +11,8 @@ curl -s https://www.iblocklist.com/lists.json | \
 
     rm -f webserver-files/blocklist.gz || true
     cp webserver-files/tmp.gz webserver-files/blocklist.gz
-    gunzip webserver-files/blocklist.gz 
+    # serve extracted
+    gunzip webserver-files/blocklist.gz
 
 echo "sleep for 1800s"
     sleep 1800
