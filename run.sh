@@ -1,11 +1,12 @@
 #!/bin/bash
-bash stop.sh
-
-make build-nc
-make publish-latest
-
 IMAGE="lukaszbielinski/generate_blocklist"
 IMAGE_WEBSERVER="nginx:1.17.9"
+IMAGE_BASE="ubuntu:18.04"
+
+bash stop.sh
+docker pull $IMAGE_BASE
+make build-nc
+make publish-latest
 
 docker run -d \
   --name generate_blocklist \
