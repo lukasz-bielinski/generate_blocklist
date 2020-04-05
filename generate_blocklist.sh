@@ -7,7 +7,10 @@ curl -s https://www.iblocklist.com/lists.json | \
     xargs wget -O - | \
     gunzip | \
     egrep -v '^#' | \
-    gzip > webserver-files/blocklist.gz
+    gzip > webserver-files/tmp.gz
+
+    rm -f webserver-files/blocklist.gz || true
+    cp webserver-files/tmp.gz webserver-files/blocklist.gz
 
 echo "sleep for 1800s"
     sleep 1800
