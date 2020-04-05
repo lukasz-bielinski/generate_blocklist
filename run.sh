@@ -6,7 +6,8 @@ IMAGE_BASE="ubuntu:18.04"
 bash stop.sh
 docker pull $IMAGE_BASE
 make build-nc
-make publish-latest
+# uncomment when pushing to registry is required
+# make publish-latest
 
 docker run -d \
   --name generate_blocklist \
