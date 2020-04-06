@@ -13,10 +13,12 @@ docker run -d \
   --name generate_blocklist \
   --net=host \
   -v $(pwd)/webserver-files:/webserver-files \
+  --restart=always \
    $IMAGE
 
 docker run -d \
    --name nginx \
    -p 7777:80 \
    -v $(pwd)/webserver-files:/usr/share/nginx/html \
+   --restart=always \
     $IMAGE_WEBSERVER
