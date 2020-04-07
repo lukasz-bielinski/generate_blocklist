@@ -7,7 +7,7 @@ bash stop.sh
 docker pull $IMAGE_BASE
 make build-nc
 # uncomment when pushing to registry is required
-# make publish-latest
+make publish-latest
 
 docker run -d \
   --name generate_blocklist \
